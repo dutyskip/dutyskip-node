@@ -28,7 +28,7 @@ import Dutyskip from 'dutyskip'
 const dutyskip = new Dutyskip('<api-key>')
 
 void (async () => {
-  const results = await dutyskip.search('chapstick', 'canada')
+  const results = await dutyskip.hs.search('chapstick', 'canada')
   console.log(JSON.stringify(results))
 })()
 ```
