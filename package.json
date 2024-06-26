@@ -1,0 +1,62 @@
+{
+  "name": "dutyskip",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "homepage": "https://docs.dutyskip.com/api",
+  "author": "DutySkip <info@dutyskip.com> (https://dutyskip.com/)",
+  "license": "MIT",
+  "description": "NodeJS / Typescript Module for DutySkip API",
+  "keywords": [
+    "duty",
+    "customs",
+    "dutyskip",
+    "api",
+    "typescript"
+  ],
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc && npx rollup dist/index.js --file dist/index.cjs --format cjs",
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint --fix .",
+    "prepublish": "npm run lint && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dutyskip/dutyskip-node"
+  },
+  "dependencies": {
+    "axios": "^1.7.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "@stylistic/eslint-plugin": "^2.1.0",
+    "@types/node": "^20.14.8",
+    "eslint": "^8.57.0",
+    "globals": "^15.6.0",
+    "lint-staged": "^15.2.7",
+    "rollup": "^4.18.0",
+    "tsx": "^4.11.0",
+    "typescript": "^5.5.2",
+    "typescript-eslint": "^7.10.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "packageManager": "pnpm@9.3.0+sha512.ee7b93e0c2bd11409c6424f92b866f31d3ea1bef5fbe47d3c7500cdc3c9668833d2e55681ad66df5b640c61fa9dc25d546efa54d76d7f8bf54b13614ac293631"
+}
