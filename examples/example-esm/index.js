@@ -1,5 +1,5 @@
-const Dutyskip = require('dutyskip')
-require('dotenv').config()
+import Dutyskip from 'dutyskip'
+import 'dotenv/config'
 
 const dutyskip = new Dutyskip(process.env?.DUTYSKIP_API_KEY)
 
