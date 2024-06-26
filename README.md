@@ -4,7 +4,7 @@
 Node.js / Typescript Module for DutySkip API
 
 ## DutySkip API
-https://docs.dutyskip.com/
+https://docs.dutyskip.com/api/
 
 ## Install
 Use `pnpm` to install the module
@@ -19,3 +19,16 @@ Or use `yarn` to install the module
 ```bash
 yarn add dutyskip
 ```
+
+## Usage
+### HS Classification Search
+```javascript
+import Dutyskip from 'dutyskip'
+const dutyskip = new Dutyskip('<api-key>')
+
+void (async () => {
+  const results = await dutyskip.search('chapstick', 'canada')
+  console.log(results)
+})()
+```
+
