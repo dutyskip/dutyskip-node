@@ -1,7 +1,6 @@
 {
-  "name": "dutyskip-node-example-simple-esm",
+  "name": "dutyskip-node-example-cjs",
   "version": "0.0.0",
-  "type": "module",
   "homepage": "https://docs.dutyskip.com/api",
   "author": "DutySkip <info@dutyskip.com> (https://dutyskip.com/)",
   "license": "MIT",
