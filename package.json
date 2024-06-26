@@ -23,7 +23,10 @@
   ],
   "type": "module",
   "scripts": {
-    "build": "npx tsc && npx rollup dist/index.js --file dist/index.cjs --format cjs",
+    "build": "npm run build-clean && npm run build-esm && npm run build-cjs",
+    "build-clean": "rm -rf dist",
+    "build-esm": "npx tsc",
+    "build-cjs": "npx rollup dist/index.js --file dist/index.cjs --format cjs",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint --fix .",
     "prepublish": "npm run lint && npm run build"
@@ -32,20 +35,19 @@
     "type": "git",
     "url": "https://github.com/dutyskip/dutyskip-node"
   },
-  "dependencies": {
-    "axios": "^1.7.2"
-  },
   "devDependencies": {
     "@eslint/js": "^9.3.0",
     "@stylistic/eslint-plugin": "^2.1.0",
     "@types/node": "^20.14.8",
+    "@types/uuid": "^10.0.0",
     "eslint": "^8.57.0",
     "globals": "^15.6.0",
     "lint-staged": "^15.2.7",
     "rollup": "^4.18.0",
     "tsx": "^4.11.0",
     "typescript": "^5.5.2",
-    "typescript-eslint": "^7.10.0"
+    "typescript-eslint": "^7.10.0",
+    "uuid": "^10.0.0"
   },
   "engines": {
     "node": ">=18"
