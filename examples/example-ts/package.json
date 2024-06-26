@@ -1,0 +1,20 @@
+{
+  "name": "dutyskip-node-example-ts",
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://docs.dutyskip.com/api",
+  "author": "DutySkip <info@dutyskip.com> (https://dutyskip.com/)",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node --env-file=.env --import=tsx src/index.ts",
+    "build": "npx tsc",
+    "serve": "node -r dotenv/config dist/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "dutyskip": "../.."
+  },
+  "devDependencies": {
+    "tsx": "^4.15.7"
+  }
+}
