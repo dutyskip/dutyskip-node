@@ -1,0 +1,14 @@
+{
+  "name": "dutyskip-node-example-simple-cjs",
+  "version": "0.0.0",
+  "homepage": "https://docs.dutyskip.com/api",
+  "author": "DutySkip <info@dutyskip.com> (https://dutyskip.com/)",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "dutyskip": "../.."
+  }
+}
