@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+    "outDir": null
+  },
   "extends": "../tsconfig.json",
   "include": ["**/*.js", "**/*.ts"]
 }
