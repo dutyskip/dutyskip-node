@@ -8,7 +8,7 @@ export interface DutyskipConfigParams {
 class Dutyskip {
   apiKey: string
   config: DutyskipConfigParams
-  api: any
+  api: Api
   static default: typeof Dutyskip
 
   constructor(apiKey: string, config: DutyskipConfigParams = {}) {
