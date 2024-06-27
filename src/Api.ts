@@ -4,6 +4,11 @@ import { DutyskipModuleError, DutyskipApiError } from './errors.js'
 import { buildUrl } from './utils.js'
 import { DutyskipConfigParams } from './index.js'
 
+interface RequestOptions {
+  params?: Record<string, string>
+  body?: Record<string, string>
+}
+
 class Api {
   apiKey: string
   config: DutyskipConfigParams
@@ -29,7 +34,8 @@ class Api {
     }
   }
 
-  makeRequest = async (endpoint: Endpoint, { params, body }: { params?: Record<string, string>, body?: Record<string, string> }): Promise<unknown> => {
+  makeRequest = async (endpoint: Endpoint, options?: RequestOptions): Promise<unknown> => {
+    const { params, body } = options ?? {}
     this.checkKey()
     const baseUrl = this.buildBaseUrl()
     const apiUrl = baseUrl + endpoint.path + (params ? `?${new URLSearchParams(params)}` : '')
