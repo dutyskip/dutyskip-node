@@ -17,13 +17,7 @@ class Dutyskip {
   }
 
   hs = {
-    search: async (q: string, country: string): Promise<any> => {
-      try {
-        return await this.api.makeRequest(endpoints.hs.search, { params: { q, country } })
-      } catch (error) {
-        return error
-      }
-    },
+    search: async (q: string, country: string): Promise<any> => await this.api.makeRequest(endpoints.hs.search, { params: { q, country } }),
   }
 }
 
