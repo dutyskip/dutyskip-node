@@ -9,10 +9,10 @@ interface RequestOptions {
   body?: Record<string, string>
 }
 
-class Api {
+class HttpClient {
   apiKey: string
   config: DutyskipConfigParams
-  static default: typeof Api
+  static default: typeof HttpClient
   constructor(apiKey: string, config: DutyskipConfigParams) {
     (this.apiKey = apiKey, this.config = config)
   }
@@ -54,4 +54,4 @@ class Api {
   }
 }
 
-export default Api
+export default HttpClient
