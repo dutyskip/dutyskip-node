@@ -17,7 +17,7 @@ class Api {
     (this.apiKey = apiKey, this.config = config)
   }
 
-  buildBaseUrl = () => {
+  buildBaseUrl(): string {
     const DEFAULT_PROTOCOL = process.env.DUTYSKIP_DEFAULT_PROTOCOL ?? 'https://'
     const DEFAULT_HOST = process.env.DUTYSKIP_DEFAULT_HOST ?? 'api.dutyskip.com'
     const protocol = this.config?.protocol ?? DEFAULT_PROTOCOL
@@ -25,7 +25,7 @@ class Api {
     return buildUrl(protocol, host)
   }
 
-  checkKey = () => {
+  checkKey(): void {
     if (!this.apiKey) {
       throw new DutyskipModuleError('API Key is missing.')
     }
@@ -34,7 +34,7 @@ class Api {
     }
   }
 
-  makeRequest = async (endpoint: Endpoint, options?: RequestOptions): Promise<unknown> => {
+  async makeRequest(endpoint: Endpoint, options?: RequestOptions): Promise<unknown> {
     const { params, body } = options ?? {}
     this.checkKey()
     const baseUrl = this.buildBaseUrl()
