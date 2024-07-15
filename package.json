@@ -29,6 +29,7 @@
     "build-cjs": "npx rollup dist/index.js --file dist/index.cjs --format cjs --external uuid",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint --fix .",
+    "test": "vitest run",
     "prepublish": "npm run lint && npm run build"
   },
   "repository": {
@@ -47,7 +48,8 @@
     "tsx": "^4.11.0",
     "typescript": "^5.5.2",
     "typescript-eslint": "^7.10.0",
-    "uuid": "^10.0.0"
+    "uuid": "^10.0.0",
+    "vitest": "^2.0.3"
   },
   "engines": {
     "node": ">=18"
