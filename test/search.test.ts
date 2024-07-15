@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 import Dutyskip from '../dist'
-const dutyskip = new Dutyskip('4b7f6118-555b-4dba-b0ec-7d2025745778')
+const dutyskip = new Dutyskip('4b7f6118-555b-4dba-b0ec-7d2025745778', { protocol: 'https://', host: 'staging-api.dutyskip.com' })
 
 test('hs search canada', async () => {
   const { items } = await dutyskip.hs.search('chapstick', 'canada') || {}
