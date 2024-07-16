@@ -12,7 +12,7 @@ importers:
         specifier: ^16.4.5
         version: 16.4.5
       dutyskip:
-        specifier: ../..
+        specifier: link:../..
         version: link:../..
     devDependencies:
       tsx:

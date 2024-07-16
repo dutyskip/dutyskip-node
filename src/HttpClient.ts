@@ -5,7 +5,7 @@ import { buildUrl } from './utils.js'
 import { DutyskipConfigParams } from './index.js'
 
 interface RequestOptions {
-  params?: Record<string, string>
+  params?: Record<string, any>
   body?: Record<string, string>
 }
 
