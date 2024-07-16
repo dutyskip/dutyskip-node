@@ -1,7 +1,12 @@
+export type EndpointMethod = 'POST' | 'GET' | 'PUT' | 'DELETE'
+export type EndpointType = 'hs'
+export type EndpointSchema = 'SearchParams'
+
 export interface Endpoint {
-  method: 'POST' | 'GET' | 'PUT' | 'DELETE'
+  method: EndpointMethod
   path: string
-  type: string
+  type: EndpointType
+  schema: EndpointSchema
 }
 
 export default {
@@ -9,7 +14,8 @@ export default {
     search: {
       method: 'GET',
       path: '/search',
-      type: 'HsSearchParams',
+      type: 'hs',
+      schema: 'SearchParams',
     } as Endpoint,
   },
 }

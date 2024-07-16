@@ -29,7 +29,7 @@ const dutyskip = new Dutyskip('<api-key>')
 
 void (async () => {
   const results = await dutyskip.hs.search({ q: 'chapstick', country: 'canada' })
-  console.log(JSON.stringify(results))
+  console.log(results)
 })()
 ```
 #### Sample Response

@@ -1,15 +1,6 @@
 import HttpClient from './HttpClient.js'
 import endpoints from './endpoints.js'
-export interface DutyskipConfigParams {
-  protocol?: string
-  host?: string
-}
-
-export interface HsSearchParams {
-  q: string
-  country: string
-  includeParents?: boolean
-}
+import { DutyskipConfigParams, HsSearchParams } from './types.js'
 
 class Dutyskip {
   apiKey: string
