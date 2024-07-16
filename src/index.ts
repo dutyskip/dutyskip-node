@@ -5,6 +5,12 @@ export interface DutyskipConfigParams {
   host?: string
 }
 
+export interface HsSearchParams {
+  q: string
+  country: string
+  includeParents?: boolean
+}
+
 class Dutyskip {
   apiKey: string
   config: DutyskipConfigParams
@@ -17,7 +23,7 @@ class Dutyskip {
   }
 
   hs = {
-    search: async (q: string, country: string): Promise<any> => await this.httpClient.makeRequest(endpoints.hs.search, { params: { q, country } }),
+    search: async (hsSearchParams: HsSearchParams): Promise<any> => await this.httpClient.makeRequest(endpoints.hs.search, { params: hsSearchParams }),
   }
 }
 

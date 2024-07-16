@@ -1,7 +1,7 @@
 export interface Endpoint {
   method: 'POST' | 'GET' | 'PUT' | 'DELETE'
   path: string
-  args: string[]
+  type: string
 }
 
 export default {
@@ -9,7 +9,7 @@ export default {
     search: {
       method: 'GET',
       path: '/search',
-      args: ['q', 'country'],
+      type: 'HsSearchParams',
     } as Endpoint,
   },
 }
