@@ -1,8 +1,10 @@
 import * as uuid from 'uuid'
+import { ZodError } from 'zod'
 import { type Endpoint } from './endpoints.js'
 import { DutyskipModuleError, DutyskipApiError } from './errors.js'
-import { buildUrl } from './utils.js'
-import { DutyskipConfigParams } from './index.js'
+import { buildUrl, parseZodErrorToString } from './utils.js'
+import { type DutyskipConfigParams } from './types.js'
+import schema from './schema.js'
 
 interface RequestOptions {
   params?: Record<string, any>
@@ -38,6 +40,17 @@ class HttpClient {
     const { params, body } = options ?? {}
     this.checkKey()
     const baseUrl = this.buildBaseUrl()
+
+    try {
+      const schemaType = schema[endpoint.type]
+      schemaType?.[endpoint.schema as keyof typeof schemaType].parse(params)
+    } catch (err) {
+      if (err instanceof ZodError) {
+        const error = `Invalid ${endpoint.schema} - ${parseZodErrorToString(err)}`
+        throw new DutyskipModuleError(error)
+      }
+    }
+
     const apiUrl = baseUrl + endpoint.path + (params ? `?${new URLSearchParams(params)}` : '')
     const response = await fetch(apiUrl, {
       headers: { 'x-api-key': this.apiKey },
