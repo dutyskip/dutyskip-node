@@ -11,7 +11,7 @@ export default {
     SearchParams: z.object({
       q: z.string(),
       country: z.enum(['canada', 'usa']),
-      includeParams: z.boolean().optional(),
+      includeParents: z.boolean().optional(),
     }),
   },
 }
