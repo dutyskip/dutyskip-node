@@ -31,7 +31,7 @@
     "lint:fix": "npx eslint --fix .",
     "test": "vitest run",
     "prepublish": "npm run lint && npm run build",
-    "release": "npm run lint && npm run build && npm run test  && changelogen --release && npm publish && git push --follow-tags"
+    "release": "npm run lint && npm run build && npm run test && changelogen --release && npm publish && git push --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "@stylistic/eslint-plugin": "^2.1.0",
     "@types/node": "^20.14.8",
     "@types/uuid": "^10.0.0",
+    "changelogen": "^0.5.5",
     "eslint": "^8.57.0",
     "globals": "^15.6.0",
     "lint-staged": "^15.2.7",
@@ -64,8 +65,5 @@
       "prettier --write"
     ]
   },
-  "packageManager": "pnpm@9.3.0+sha512.ee7b93e0c2bd11409c6424f92b866f31d3ea1bef5fbe47d3c7500cdc3c9668833d2e55681ad66df5b640c61fa9dc25d546efa54d76d7f8bf54b13614ac293631",
-  "dependencies": {
-    "changelogen": "^0.5.5"
-  }
+  "packageManager": "pnpm@9.3.0+sha512.ee7b93e0c2bd11409c6424f92b866f31d3ea1bef5fbe47d3c7500cdc3c9668833d2e55681ad66df5b640c61fa9dc25d546efa54d76d7f8bf54b13614ac293631"
 }
