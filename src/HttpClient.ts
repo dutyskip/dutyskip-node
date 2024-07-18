@@ -36,7 +36,7 @@ class HttpClient {
     }
   }
 
-  async makeRequest(endpoint: Endpoint, options?: RequestOptions): Promise<unknown> {
+  async makeRequest(endpoint: Endpoint, options?: RequestOptions): Promise<any> {
     const { params, body } = options ?? {}
     this.checkKey()
     const baseUrl = this.buildBaseUrl()

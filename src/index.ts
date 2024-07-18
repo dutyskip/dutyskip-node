@@ -1,6 +1,6 @@
 import HttpClient from './HttpClient.js'
 import endpoints from './endpoints.js'
-import { DutyskipConfigParams, HsSearchParams } from './types.js'
+import { DutyskipConfigParams, HsSearchParams, HsSearchResponse } from './types.js'
 
 class Dutyskip {
   apiKey: string
@@ -14,7 +14,7 @@ class Dutyskip {
   }
 
   hs = {
-    search: async (hsSearchParams: HsSearchParams): Promise<any> => await this.httpClient.makeRequest(endpoints.hs.search, { params: hsSearchParams }),
+    search: async (hsSearchParams: HsSearchParams): Promise<HsSearchResponse> => await this.httpClient.makeRequest(endpoints.hs.search, { params: hsSearchParams }),
   }
 }
 
