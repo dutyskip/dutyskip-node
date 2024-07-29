@@ -11,6 +11,9 @@ export interface Endpoint {
 
 export default {
   hs: {
+    /**
+     * @see {@link https://docs.dutyskip.com/api/reference/search DutySkip Docs - API Reference - Search}
+     */
     search: {
       method: 'GET',
       path: '/search',
