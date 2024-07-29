@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+export const CountryOfImport = z.enum(['canada', 'usa'])
+
 export default {
   dutyskip: {
     ConfigParams: z.object({

@@ -1,10 +1,11 @@
 import { z } from 'zod'
-import schema from './schema.js'
+import schema, { CountryOfImport } from './schema.js'
 
 const { dutyskip, hs } = schema
 
 export type DutyskipConfigParams = z.infer<typeof dutyskip.ConfigParams>
 export type HsSearchParams = z.infer<typeof hs.SearchParams>
+export type CountryOfImport = z.infer<typeof CountryOfImport>
 
 export interface HsSearchItemPga {
   agency: string
