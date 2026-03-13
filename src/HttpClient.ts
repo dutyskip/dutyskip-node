@@ -16,7 +16,8 @@ class HttpClient {
   config: DutyskipConfigParams
   static default: typeof HttpClient
   constructor(apiKey: string, config: DutyskipConfigParams) {
-    (this.apiKey = apiKey, this.config = config)
+    this.apiKey = apiKey
+    this.config = config
   }
 
   buildBaseUrl(): string {

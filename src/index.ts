@@ -1,6 +1,6 @@
 import HttpClient from './HttpClient.js'
 import endpoints from './endpoints.js'
-import { DutyskipConfigParams, HsSearchParams, HsSearchResponse } from './types.js'
+import type { DutyskipConfigParams, HsSearchParams, HsSearchResponse } from './types.js'
 
 class Dutyskip {
   apiKey: string
@@ -18,7 +18,8 @@ class Dutyskip {
    * @see {@link https://docs.dutyskip.com/api/authentication#api-keys DutySkip Docs - API Keys}
    */
   constructor(apiKey: string, config: DutyskipConfigParams = {}) {
-    (this.apiKey = apiKey), (this.config = config)
+    this.apiKey = apiKey
+    this.config = config
     this.httpClient = new HttpClient(apiKey, config)
   }
   /**

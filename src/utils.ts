@@ -5,5 +5,5 @@ export function buildUrl(protocol: string, host: string, config?: { port?: strin
 }
 
 export function parseZodErrorToString(err: ZodError) {
-  return err.issues.map(issue => `${issue.path?.[0]} - ${issue.message}`).join(', ')
+  return err.issues.map(issue => `${String(issue.path?.[0])} - ${issue.message}`).join(', ')
 }

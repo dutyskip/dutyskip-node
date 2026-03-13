@@ -1,15 +1,16 @@
 import eslint from '@eslint/js'
+import { defineConfig } from 'eslint/config'
 import tseslint from 'typescript-eslint'
 import stylistic from '@stylistic/eslint-plugin'
 import globals from 'globals'
 
-export default tseslint.config(
+export default defineConfig(
   eslint.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
-  ...tseslint.configs.recommended,
-  ...tseslint.configs.stylistic,
-  ...tseslint.configs.stylisticTypeChecked,
-  stylistic.configs['recommended-flat'],
+  tseslint.configs.recommended,
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
+  tseslint.configs.stylistic,
+  stylistic.configs.recommended,
   {
     languageOptions: {
       parserOptions: {
@@ -63,6 +64,6 @@ export default tseslint.config(
     },
   },
   {
-    ignores: ['**/dist/**/*', '**/node_modules/**/*', '**/test/**/*', '**/docs/**/*'],
+    ignores: ['**/dist/**/*', '**/node_modules/**/*', '**/test/**/*', '**/docs/**/*', '**/examples/**/*', 'eslint.config.js'],
   },
 )
