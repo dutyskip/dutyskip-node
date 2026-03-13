@@ -9,10 +9,10 @@ importers:
   .:
     devDependencies:
       '@eslint/js':
-        specifier: ^9.3.0
+        specifier: ^9.5.0
         version: 9.5.0
       '@stylistic/eslint-plugin':
-        specifier: ^2.1.0
+        specifier: ^2.3.0
         version: 2.3.0(eslint@8.57.0)(typescript@5.5.2)
       '@types/node':
         specifier: ^20.14.8
@@ -36,7 +36,7 @@ importers:
         specifier: ^4.18.0
         version: 4.18.0
       tsx:
-        specifier: ^4.11.0
+        specifier: ^4.15.7
         version: 4.15.7
       typedoc:
         specifier: ^0.26.5
@@ -48,7 +48,7 @@ importers:
         specifier: ^5.5.2
         version: 5.5.2
       typescript-eslint:
-        specifier: ^7.10.0
+        specifier: ^7.14.1
         version: 7.14.1(eslint@8.57.0)(typescript@5.5.2)
       uuid:
         specifier: ^10.0.0
